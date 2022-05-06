@@ -22,5 +22,12 @@ describe('My First Test', () => {
          
        }
       });
+
+      //for variable storage cypress data must handle promisses
+      //cypress function handle promisses by themselves, js variables don't
+      const logo = cy.get('.brand').then(function (logoElement) {
+        cy.log(logoElement.text());
+      })
+    
     })
   })
