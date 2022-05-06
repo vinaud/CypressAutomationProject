@@ -1,5 +1,7 @@
 /// <reference types="Cypress" />
 
+// This file contains some basic cypress techniques
+
 describe('My First Test', () => {
     it('is my first test case', () => {
       cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
