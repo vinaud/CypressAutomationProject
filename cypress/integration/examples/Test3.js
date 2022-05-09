@@ -32,6 +32,7 @@ describe('My Third Test', () => {
       cy.get('#displayed-text').should('be.visible');
 
       //radio button verify
+      cy.get('[value="radio2"]').check().should('be.checked');
 
 
       });
