@@ -14,6 +14,14 @@ describe('My Third Test', () => {
 
       //static dropdown
       cy.get('select').select('option2').should('have.value', 'option2');
+      //autocoplete dynamic dropdown
+      cy.get('#autocomplete').type('indi');
+      cy.get('.ui-menu-item div').each(($el, index, $list) => {
+        if($el.text()==="India"){
+          cy.wrap($el).click();
+        }
+      });
+      cy.get('#autocomplete').should('have.value', 'India');
 
       });
 
