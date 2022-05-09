@@ -10,7 +10,10 @@ describe('My Third Test', () => {
       cy.get('#checkBoxOption1').uncheck().should('not.be.checked');
 
       //verify multiple checks
-      cy.get('input[type="checkbox"]').check(['option1', 'option2']);
+      cy.get('input[type="checkbox"]').check(['option2', 'option3']);
+
+      //static dropdown
+      cy.get('select').select('option2').should('have.value', 'option2');
 
       });
 
