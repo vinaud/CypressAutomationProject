@@ -18,5 +18,9 @@ describe('My Third Test', () => {
         expect(str).to.equal('Hello , Are you sure you want to confirm?');
       });
 
+      //treating new tab opening with jquery function
+      cy.get('#opentab').invoke('removeAttr', 'target').click();
+
+
       });
   })
