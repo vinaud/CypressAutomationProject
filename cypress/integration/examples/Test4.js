@@ -20,7 +20,11 @@ describe('My Third Test', () => {
 
       //treating new tab opening with jquery function
       cy.get('#opentab').invoke('removeAttr', 'target').click();
+      cy.url().should('include', "rahulshettyacademy.com")
 
+      //navigation directions
+      cy.go('back');
+      cy.url().should('include', "rahulshettyacademy.com/AutomationPractice/")
 
       });
   })
