@@ -16,7 +16,7 @@
     "url": "https://github.com/vinaud/CypressAutomationProject/issues"
   },
   "homepage": "https://github.com/vinaud/CypressAutomationProject#readme",
-  "dependencies": {
-    "cypress": "^9.6.0"
+  "devDependencies": {
+    "cypress": "^9.6.1"
   }
 }
