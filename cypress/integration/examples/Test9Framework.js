@@ -18,10 +18,14 @@ describe('Framework test case', () => {
         cy.get('input[name="name"]:nth-child(2)').should('have.attr', 'minlength', '2');
         cy.get('#inlineRadio3').should('be.disabled');
 
-        //using custom cypress command
+        
         cy.get(':nth-child(2) > .nav-link').click();
-        cy.selectProduct("Blackberry");
-        cy.selectProduct("iphone X");
+
+        this.data.productNames.forEach((product) => {
+             //using custom cypress command
+            cy.selectProduct(product);
+        })
+
       
     })
   })
