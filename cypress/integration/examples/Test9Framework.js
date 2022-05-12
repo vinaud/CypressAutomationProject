@@ -17,5 +17,11 @@ describe('Framework test case', () => {
         //varify if field has attribute
         cy.get('input[name="name"]:nth-child(2)').should('have.attr', 'minlength', '2');
         cy.get('#inlineRadio3').should('be.disabled');
+
+        //using custom cypress command
+        cy.get(':nth-child(2) > .nav-link').click();
+        cy.selectProduct("Blackberry");
+        cy.selectProduct("iphone X");
+      
     })
   })
