@@ -1,5 +1,4 @@
 {
-    "modifyObstructiveCode": true,
-    "experimentalSourceRewriting":false,
-    "chromeWebSecurity": true
+    "defaultCommandTimeout": 8000,
+    "pageLoadTimeout": 10000
 }

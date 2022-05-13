@@ -31,6 +31,9 @@ describe('Framework test case', () => {
         })
 
         productsPage.getCheckoutButton().click();
+        cy.contains('Checkout').click();
+        cy.get('#country').type('India');
+        cy.get('.suggestions > ul > li > a').click();
 
       
     })
