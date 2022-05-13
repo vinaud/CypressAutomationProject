@@ -31,6 +31,25 @@ describe('Framework test case', () => {
         })
 
         productsPage.getCheckoutButton().click();
+
+        var sum = 0;
+        cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
+            const amount = $el.text();
+            var res = amount.split(" ");
+            res = res[1].trim();
+            sum = Number(sum) + Number(res);
+            cy.log(res);
+        }).then(() => {
+            cy.log(sum);
+        });
+
+        cy.get('h3 strong').then(function(element) {
+            const amount = element.text();
+            var res = amount.split(" ");
+            var total = res[1].trim();
+            expect(Number(total)).to.equal(sum);
+        })
+
         cy.contains('Checkout').click();
         cy.get('#country').type('India');
         cy.get('.suggestions > ul > li > a').click();
