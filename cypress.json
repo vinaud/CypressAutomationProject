@@ -4,5 +4,6 @@
   "env": {
     "url": "https://rahulshettyacademy.com/angularpractice/"
   },
-  "projectId": "pitzi1"
+  "projectId": "pitzi1",
+  "reporter": "mochawesome"
 }
