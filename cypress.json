@@ -5,5 +5,8 @@
     "url": "https://rahulshettyacademy.com/angularpractice/"
   },
   "projectId": "pitzi1",
-  "reporter": "mochawesome"
+  "reporter": "mochawesome",
+  "retries": {
+    "runMode":1
+  }
 }
