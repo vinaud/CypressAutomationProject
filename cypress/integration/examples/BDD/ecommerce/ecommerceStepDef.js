@@ -4,6 +4,7 @@ import  ProductsPage  from '../../../../support/pageObjects/ProductsPage';
 
 const homePage = new HomePage();
 const productsPage = new ProductsPage();
+let name;
 
 Given('I open Ecommerce page', () => {
     cy.visit(Cypress.env('url'));
@@ -53,4 +54,22 @@ Then('select the country submit and verify Thankyou', () =>{
         const actualtext = element.text();
         expect(actualtext.includes('Success')).to.be.true
     })
+});
+
+When('I fill the form details', function(dataTable){
+    name = dataTable.rawTable[1][0]
+    homePage.getEditBox().type(name);
+    homePage.getGender().select(dataTable.rawTable[1][1]);
+});
+
+Then('Validate the forms behavior', function(){
+    homePage.getTwoWayDataBinding().should('have.value', name);
+    //varify if field has attribute
+    homePage.getEditBox().should('have.attr', 'minlength', '2');
+    homePage.getEntrepeneur().should('be.disabled');
+
+});
+
+And('select the shop page', function(){
+    homePage.getShopTab().click();
 });
