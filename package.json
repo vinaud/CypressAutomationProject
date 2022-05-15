@@ -9,7 +9,9 @@
     "chromeTest": "npm run test -- --browser chrome",
     "recordDashboardTest": "npm run test -- --record --key ca107272-6679-49d0-aa71-5807b2aa8861 --reporter mochawesome",
     "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\""
-    
+  },
+  "cypress-cucumber-preprocessor":{
+    "nonGlobalStepDefinitions": true
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
   "homepage": "https://github.com/vinaud/CypressAutomationProject#readme",
   "devDependencies": {
     "cypress": "^9.6.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-iframe": "^1.0.1",
     "mocha": "^5.2.0",
     "mochawesome": "^7.1.3"
