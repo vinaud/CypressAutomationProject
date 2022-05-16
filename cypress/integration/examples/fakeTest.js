@@ -21,7 +21,10 @@ describe('My First API Test', () => {
      }).as('bookRetrievals');
     
      cy.get("button[class='btn btn-primary']").click();
-     cy.wait('@bookRetrievals');
+     cy.wait('@bookRetrievals').should(({request, response}) => {
+         //verify if data in table has the same length as retrieved data by mocked api response
+         cy.get('tr').should('have.length', response.body.length + 1);
+     });
      cy.get('p').should('have.text', 'Oops only 1 Book available');
 
 
