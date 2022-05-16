@@ -8,7 +8,8 @@
     "headTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
     "recordDashboardTest": "npm run test -- --record --key ca107272-6679-49d0-aa71-5807b2aa8861 --reporter mochawesome",
-    "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\""
+    "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\"",
+    "tagTest": "npx cypress-tags run -e TAGS=\"@Smoke\" --headed --browser chrome"
   },
   "cypress-cucumber-preprocessor":{
     "nonGlobalStepDefinitions": true
