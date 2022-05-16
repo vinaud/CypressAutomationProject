@@ -11,8 +11,14 @@
     "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\"",
     "tagTest": "npx cypress-tags run -e TAGS=\"@Smoke\" --headed --browser chrome"
   },
-  "cypress-cucumber-preprocessor":{
-    "nonGlobalStepDefinitions": true
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   },
   "repository": {
     "type": "git",
@@ -29,6 +35,7 @@
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-iframe": "^1.0.1",
     "mocha": "^5.2.0",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "multiple-cucumber-html-reporter": "^1.20.0"
   }
 }
