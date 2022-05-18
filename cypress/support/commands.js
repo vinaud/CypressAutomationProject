@@ -15,7 +15,17 @@ Cypress.Commands.add("selectProduct", (productName) => {
             cy.get('button.btn.btn-info').eq(index).click();
         }
     });
-})
+});
+
+Cypress.Commands.add("loginAPI", () => {
+    cy.request("POST", "http://rahulshettyacademy.com/api/ecom/auth/login", {
+        "userEmail": "rahulshetty@gmail.com",
+        "userPassword": "Iamking@00"
+    }).then(function(response){
+        expect(response.status).to.be.equal(200);
+        Cypress.env('token', response.body.token);
+    });
+});
 
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
