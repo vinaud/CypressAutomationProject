@@ -1,0 +1,10 @@
+{"db": {
+    "userName": "",
+    "password": "",
+    "server": "",
+    "options": {
+        "database": "",
+        "encrypt": true,
+        "rowCollectionOnRequestCompletion" : true
+    }
+}}
